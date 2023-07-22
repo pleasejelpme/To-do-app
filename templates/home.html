@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block main %}
+
+<ul class="collection with-header">
+    <li class="collection-header blue-text text-darken-3 center-align">
+        <h4>Task List</h4>
+    </li>
+    {% for task in tasks %}
+    <li class="collection-item">
+        <div>
+            <a href="{% url 'task' task.id %}">
+                <span class="title">{{task}}</span>
+            </a>
+            <a href="{% url 'update-task' task.id %}" class="secondary-content"><i class="material-icons">edit</i></a>
+            <a href="{% url 'delete-task' task.id %}" class="secondary-content"><i class="material-icons">delete</i></a>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+<div class="center-align">
+    <a href="{% url 'create-task' %}" class="btn-floating btn-large waves-effect waves-light blue"><i
+            class="material-icons">add</i></a>
+</div>
+
+{% endblock main %}

@@ -1,0 +1,13 @@
+<div class="nav-wrapper blue">
+    <a href="{% url 'home' %}" class="brand-logo" style="padding-left: 30px;">To Do app</a>
+    <ul id="nav-mobile" class="right">
+        {% if request.user.is_authenticated %}
+
+        <li><a href="{% url 'logout' %}"><i class="material-icons">logout</i></a></li>
+        {% else %}
+        <li><a href="{% url 'login' %}"><i class="material-icons">face</i></a></li>
+        <li><a href="{% url 'register' %}"><i class="material-icons">person_add</i></a></li>
+        {% endif %}
+    </ul>
+
+</div>

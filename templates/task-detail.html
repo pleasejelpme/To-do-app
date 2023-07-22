@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="card">
+    <div class="card-content">
+        <span class="card-title center-align">
+            <h5>{{task.name}}</h5>
+        </span>
+        <p>{{task.description}}</p>
+    </div>
+    <div class="card-action">
+        <a href="{% url 'update-task' task.id %}"><i class="material-icons">edit</i></a>
+        <a href="{% url 'delete-task' task.id %}"><i class="material-icons">delete</i></a>
+    </div>
+</div>
+
+
+
+{% endblock main %}
